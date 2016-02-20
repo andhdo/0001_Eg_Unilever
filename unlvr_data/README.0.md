@@ -26,9 +26,15 @@ cambiar los datos de conexion
 descargar el repositorio
 git clone https://github.com/Duhart/Ultimate_Level.git
 
+# realizar etl y calculos 
 pasarse al directorio donde esta el codigo
 
 setwd( 'C:/.apps/e.edwin/0001_Unilever/Ultimate_Level/UL')
-source('R/init.R')
+
+source("R/init.R")
 create_database()
+
+source("R/main.R")
+update_calcs()
+
  
