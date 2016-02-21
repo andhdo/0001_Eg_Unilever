@@ -16,6 +16,11 @@ configurar acorde a los siguietnes datos:
  user: root/meconio3 
  windows service name: MySQL57
  
+ 
+# permitir conexiones remotas a mysql con el root
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'meconio3' WITH GRANT OPTION; 
+ 
 # creacion de base de datos y dimensiones
 
 prerrequisitos:
