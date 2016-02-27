@@ -2,24 +2,17 @@
 PARTE-PROC
 =====================
 
-----------------------
-INSTALACION
-----------------------
+prerrequisitos:
+	se recomienda instalar las herrameintas de r previamente.
+	las indicaciones estan en el proyecto unlvr_data
 
 
-descargar git-scm
-descargar R
-descargar Rstudio
-descargar rtools
 
-abrir rstudio como admin pasarse al directorio de los scripts de Rstudio
 
-install.packages('RServe')
-install.packages('DBI')
-install.packages('RMySQL')
-#
-install.packages('dplyr')
-install.packages('tidyr')
+
+
+
+
 
 configurar la variable de entorno path; adicionar el directorio que contieene R.dll
 C:\Program Files\R\R-3.2.3\bin\x64
