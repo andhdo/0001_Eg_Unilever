@@ -1,0 +1,1064 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 9200.15.1201.0018                                -->
+<workbook source-platform='win' version='9.2' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='dataset1_v (tableauconnect)' inline='true' name='mysql.1f9as6b1ilzr0d1b44c981x2wzwb' version='9.2'>
+      <connection class='mysql' dbname='tableauconnect' odbc-native-protocol='yes' port='3306' server='localhost' source-charset='' username='root/meconio3' />
+      <aliases enabled='yes' />
+      <column caption='AutoInc1' datatype='integer' name='[Calculation_574771958782709776]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='AutoInc2' datatype='integer' name='[Calculation_574771958783361041]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='2' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <group caption='Acción (Ai)' hidden='true' name='[Action (Ai)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:ai:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Acción (Ai2C)' hidden='true' name='[Action (Ai2C)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:ai2c:ok]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' dim-percentage='0.365949' measure-ordering='alphabetic' measure-percentage='0.634051' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Colombia&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Home' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='all'>
+        <exclude-sheet name='bt2' />
+        <exclude-sheet name='bt3' />
+        <exclude-sheet name='bt4' />
+        <exclude-sheet name='bt5' />
+      </source>
+      <link caption='Home' delimiter=',' escape='\' expression='tsl:Home?%5Bmysql.1f9as6b1ilzr0d1b44c981x2wzwb%5D.%5BCalculation_574771958782709776%5D~s0=&lt;[Calculation_574771958782709776]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='bt2,bt3,bt4,bt5' />
+        <param name='target' value='Home' />
+      </command>
+    </action>
+    <action caption='Scope' name='[Action2]'>
+      <activation type='on-select' />
+      <source type='all'>
+        <exclude-sheet name='bt1' />
+        <exclude-sheet name='bt3' />
+        <exclude-sheet name='bt4' />
+        <exclude-sheet name='bt5' />
+      </source>
+      <link caption='Scope' delimiter=',' escape='\' expression='tsl:Scope?%5Bmysql.1f9as6b1ilzr0d1b44c981x2wzwb%5D.%5BCalculation_574771958783361041%5D~s0=&lt;[Calculation_574771958782709776]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='bt1,bt3,bt4,bt5' />
+        <param name='target' value='Scope' />
+      </command>
+    </action>
+    <action caption='Exp' name='[Action3]'>
+      <activation type='on-select' />
+      <source type='all'>
+        <exclude-sheet name='bt1' />
+        <exclude-sheet name='bt2' />
+        <exclude-sheet name='bt3' />
+        <exclude-sheet name='bt5' />
+      </source>
+      <link caption='Exp' delimiter=',' escape='\' expression='tsl:Exp?%5Bmysql.1f9as6b1ilzr0d1b44c981x2wzwb%5D.%5BCalculation_574771958783361041%5D~s0=&lt;[Calculation_574771958782709776]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='bt1,bt2,bt3,bt5' />
+        <param name='target' value='Exp' />
+      </command>
+    </action>
+    <action caption='Inv' name='[Action4]'>
+      <activation type='on-select' />
+      <source type='all'>
+        <exclude-sheet name='bt1' />
+        <exclude-sheet name='bt2' />
+        <exclude-sheet name='bt4' />
+        <exclude-sheet name='bt5' />
+      </source>
+      <link caption='Inv' delimiter=',' escape='\' expression='tsl:Inv?%5Bmysql.1f9as6b1ilzr0d1b44c981x2wzwb%5D.%5BCalculation_574771958783361041%5D~s0=&lt;[Calculation_574771958782709776]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='bt1,bt2,bt4,bt5' />
+        <param name='target' value='Inv' />
+      </command>
+    </action>
+    <action caption='Opt' name='[Action5]'>
+      <activation type='on-select' />
+      <source type='all'>
+        <exclude-sheet name='bt1' />
+        <exclude-sheet name='bt2' />
+        <exclude-sheet name='bt3' />
+        <exclude-sheet name='bt4' />
+      </source>
+      <link caption='Opt' delimiter=',' escape='\' expression='tsl:Opt?%5Bmysql.1f9as6b1ilzr0d1b44c981x2wzwb%5D.%5BCalculation_574771958783361041%5D~s0=&lt;[Calculation_574771958782709776]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='bt1,bt2,bt3,bt4' />
+        <param name='target' value='Opt' />
+      </command>
+    </action>
+    <datasources>
+      <datasource caption='dataset1_v (tableauconnect)' name='mysql.1f9as6b1ilzr0d1b44c981x2wzwb' />
+    </datasources>
+    <datasource-dependencies datasource='mysql.1f9as6b1ilzr0d1b44c981x2wzwb'>
+      <column caption='AutoInc1' datatype='integer' name='[Calculation_574771958782709776]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='AutoInc2' datatype='integer' name='[Calculation_574771958783361041]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='2' />
+      </column>
+    </datasource-dependencies>
+  </actions>
+  <worksheets>
+    <worksheet name='bt1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_v (tableauconnect)' name='mysql.1f9as6b1ilzr0d1b44c981x2wzwb' />
+          </datasources>
+          <datasource-dependencies datasource='mysql.1f9as6b1ilzr0d1b44c981x2wzwb'>
+            <column caption='&quot;bt1&quot;' datatype='string' name='[Calculation_574771958752215051]' role='dimension' type='nominal' user:unnamed='bt1'>
+              <calculation class='tableau' formula='&quot;bt1&quot;' />
+            </column>
+            <column-instance column='[Calculation_574771958752215051]' derivation='None' name='[none:Calculation_574771958752215051:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' value='27' />
+            <format attr='height' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752215051:nk]' value='30' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='10' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+            <format attr='background-color' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752215051:nk]' value='#ffffff' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752215051:nk]' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='font-family' value='Arial Rounded MT Bold' />
+            <format attr='color' value='#0062a7' />
+            <format attr='font-size' value='18' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-pattern' scope='rows' value='none' />
+            <format attr='line-pattern' scope='cols' value='none' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='shape' value=':filled/right-triangle' />
+                <format attr='size' value='1.1094474792480469' />
+                <format attr='mark-color' value='#05aeda' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-pattern' value='none' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752215051:nk]</rows>
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='bt2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_v (tableauconnect)' name='mysql.1f9as6b1ilzr0d1b44c981x2wzwb' />
+          </datasources>
+          <datasource-dependencies datasource='mysql.1f9as6b1ilzr0d1b44c981x2wzwb'>
+            <column caption='&quot;bt2&quot;' datatype='string' name='[Calculation_574771958752456719]' role='dimension' type='nominal' user:unnamed='bt2'>
+              <calculation class='tableau' formula='&quot;bt2&quot;' />
+            </column>
+            <column-instance column='[Calculation_574771958752456719]' derivation='None' name='[none:Calculation_574771958752456719:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' value='25' />
+            <format attr='height' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752456719:nk]' value='30' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='10' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+            <format attr='background-color' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752456719:nk]' value='#ffffff' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752456719:nk]' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='font-family' value='Arial Rounded MT Bold' />
+            <format attr='color' value='#0062a7' />
+            <format attr='font-size' value='18' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-pattern' scope='rows' value='none' />
+            <format attr='line-pattern' scope='cols' value='none' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='shape' value=':filled/right-triangle' />
+                <format attr='size' value='1.1754143238067627' />
+                <format attr='mark-color' value='#2e94c7' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-pattern' value='none' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752456719:nk]</rows>
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='bt3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_v (tableauconnect)' name='mysql.1f9as6b1ilzr0d1b44c981x2wzwb' />
+          </datasources>
+          <datasource-dependencies datasource='mysql.1f9as6b1ilzr0d1b44c981x2wzwb'>
+            <column caption='&quot;bt3&quot;' datatype='string' name='[Calculation_574771958752440334]' role='dimension' type='nominal' user:unnamed='bt3'>
+              <calculation class='tableau' formula='&quot;bt3&quot;' />
+            </column>
+            <column-instance column='[Calculation_574771958752440334]' derivation='None' name='[none:Calculation_574771958752440334:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' value='27' />
+            <format attr='height' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752440334:nk]' value='30' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='10' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+            <format attr='background-color' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752440334:nk]' value='#ffffff' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752440334:nk]' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='font-family' value='Arial Rounded MT Bold' />
+            <format attr='color' value='#0062a7' />
+            <format attr='font-size' value='18' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-pattern' scope='rows' value='none' />
+            <format attr='line-pattern' scope='cols' value='none' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='shape' value=':filled/right-triangle' />
+                <format attr='size' value='1.1094474792480469' />
+                <format attr='mark-color' value='#14aedf' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-pattern' value='none' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752440334:nk]</rows>
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='bt4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_v (tableauconnect)' name='mysql.1f9as6b1ilzr0d1b44c981x2wzwb' />
+          </datasources>
+          <datasource-dependencies datasource='mysql.1f9as6b1ilzr0d1b44c981x2wzwb'>
+            <column caption='&quot;bt4&quot;' datatype='string' name='[Calculation_574771958752419853]' role='dimension' type='nominal' user:unnamed='bt4'>
+              <calculation class='tableau' formula='&quot;bt4&quot;' />
+            </column>
+            <column-instance column='[Calculation_574771958752419853]' derivation='None' name='[none:Calculation_574771958752419853:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' value='27' />
+            <format attr='height' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752419853:nk]' value='30' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='10' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+            <format attr='background-color' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752419853:nk]' value='#ffffff' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752419853:nk]' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='font-family' value='Arial Rounded MT Bold' />
+            <format attr='color' value='#0062a7' />
+            <format attr='font-size' value='18' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-pattern' scope='rows' value='none' />
+            <format attr='line-pattern' scope='cols' value='none' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='shape' value=':filled/right-triangle' />
+                <format attr='size' value='1.1094474792480469' />
+                <format attr='mark-color' value='#04aeda' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-pattern' value='none' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752419853:nk]</rows>
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='bt5'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset1_v (tableauconnect)' name='mysql.1f9as6b1ilzr0d1b44c981x2wzwb' />
+          </datasources>
+          <datasource-dependencies datasource='mysql.1f9as6b1ilzr0d1b44c981x2wzwb'>
+            <column caption='&quot;bt5&quot;' datatype='string' name='[Calculation_574771958752399372]' role='dimension' type='nominal' user:unnamed='bt5'>
+              <calculation class='tableau' formula='&quot;bt5&quot;' />
+            </column>
+            <column-instance column='[Calculation_574771958752399372]' derivation='None' name='[none:Calculation_574771958752399372:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' value='27' />
+            <format attr='height' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752399372:nk]' value='30' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='10' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+            <format attr='background-color' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752399372:nk]' value='#ffffff' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752399372:nk]' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='font-family' value='Arial Rounded MT Bold' />
+            <format attr='color' value='#0062a7' />
+            <format attr='font-size' value='18' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-pattern' value='none' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-pattern' scope='rows' value='none' />
+            <format attr='line-pattern' scope='cols' value='none' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='shape' value=':filled/right-triangle' />
+                <format attr='size' value='1.1094474792480469' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#0c83be' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-pattern' value='none' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752399372:nk]</rows>
+        <cols />
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Exp'>
+      <style />
+      <size maxheight='720' maxwidth='1280' minheight='720' minwidth='1280' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone forceUpdate='' h='100000' id='1' param='http://encuestavirtual.com/GMA_Contents/explore.PNG' type='web' w='100000' x='0' y='0' />
+        </zone>
+        <zone h='100000' id='3' type='empty' w='100000' x='0' y='694' />
+        <zone h='4167' id='4' name='bt1' w='2109' x='21484' y='7361' />
+        <zone h='4722' id='5' name='bt2' w='2656' x='30156' y='7361' />
+        <zone h='10000' id='6' name='bt3' w='2891' x='42656' y='7361' />
+        <zone h='4861' id='7' name='bt4' w='2578' x='52500' y='7222' />
+        <zone h='5694' id='8' name='bt5' w='2422' x='64766' y='7361' />
+      </zones>
+    </dashboard>
+    <dashboard name='Home'>
+      <style />
+      <size maxheight='720' maxwidth='1280' minheight='720' minwidth='1280' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone forceUpdate='' h='100000' id='1' param='http://encuestavirtual.com/GMA_Contents/home.PNG' type='web' w='100000' x='0' y='0' />
+        </zone>
+        <zone h='100000' id='3' type='empty' w='100000' x='0' y='694' />
+        <zone h='4167' id='4' name='bt1' w='2109' x='21484' y='7361' />
+        <zone h='4722' id='5' name='bt2' w='2656' x='30156' y='7361' />
+        <zone h='10000' id='6' name='bt3' w='2891' x='42656' y='7361' />
+        <zone h='4861' id='7' name='bt4' w='2578' x='52500' y='7222' />
+        <zone h='5694' id='8' name='bt5' w='2422' x='64766' y='7361' />
+      </zones>
+    </dashboard>
+    <dashboard name='Inv'>
+      <style />
+      <size maxheight='720' maxwidth='1280' minheight='720' minwidth='1280' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone forceUpdate='' h='100000' id='1' param='http://encuestavirtual.com/GMA_Contents/investigate.PNG' type='web' w='100000' x='0' y='0' />
+        </zone>
+        <zone h='100000' id='3' type='empty' w='100000' x='0' y='694' />
+        <zone h='4167' id='4' name='bt1' w='2109' x='21484' y='7361' />
+        <zone h='4722' id='5' name='bt2' w='2656' x='30156' y='7361' />
+        <zone h='10000' id='6' name='bt3' w='2891' x='42656' y='7361' />
+        <zone h='4861' id='7' name='bt4' w='2578' x='52500' y='7222' />
+        <zone h='5694' id='8' name='bt5' w='2422' x='64766' y='7361' />
+      </zones>
+    </dashboard>
+    <dashboard name='Opt'>
+      <style />
+      <size maxheight='720' maxwidth='1280' minheight='720' minwidth='1280' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone forceUpdate='' h='100000' id='1' param='http://encuestavirtual.com/GMA_Contents/optimise.PNG' type='web' w='100000' x='0' y='0' />
+        </zone>
+        <zone h='100000' id='3' type='empty' w='100000' x='0' y='694' />
+        <zone h='4167' id='4' name='bt1' w='2109' x='21641' y='7083' />
+        <zone h='4722' id='5' name='bt2' w='2656' x='30156' y='7361' />
+        <zone h='10000' id='6' name='bt3' w='2891' x='42656' y='7361' />
+        <zone h='4861' id='7' name='bt4' w='2578' x='52500' y='7222' />
+        <zone h='5694' id='8' name='bt5' w='2422' x='64766' y='7361' />
+      </zones>
+    </dashboard>
+    <dashboard name='Scope'>
+      <style />
+      <size maxheight='720' maxwidth='1280' minheight='720' minwidth='1280' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone forceUpdate='' h='100000' id='1' param='http://encuestavirtual.com/GMA_Contents/scope.PNG' type='web' w='100000' x='0' y='0' />
+        </zone>
+        <zone h='100000' id='3' type='empty' w='100000' x='0' y='694' />
+        <zone h='4167' id='4' name='bt1' w='2109' x='21484' y='7361' />
+        <zone h='4722' id='5' name='bt2' w='2656' x='30156' y='7361' />
+        <zone h='10000' id='6' name='bt3' w='2891' x='42656' y='7361' />
+        <zone h='4861' id='7' name='bt4' w='2578' x='52500' y='7222' />
+        <zone h='5694' id='8' name='bt5' w='2422' x='64766' y='7361' />
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows source-height='28'>
+    <window class='dashboard' name='Home'>
+      <viewpoints>
+        <viewpoint name='bt1'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt2'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt3'>
+          <selection-collection>
+            <tuple-selection>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields />
+                    <y-fields>
+                      <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752440334:nk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752440334:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>&quot;bt3&quot;</value>
+                </tuple>
+              </tuple-reference>
+            </tuple-selection>
+          </selection-collection>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt4'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt5'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+      </viewpoints>
+      <active id='6' />
+    </window>
+    <window class='dashboard' maximized='true' name='Scope'>
+      <viewpoints>
+        <viewpoint name='bt1'>
+          <selection-collection>
+            <tuple-selection>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields />
+                    <y-fields>
+                      <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752215051:nk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752215051:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>&quot;bt1&quot;</value>
+                </tuple>
+              </tuple-reference>
+            </tuple-selection>
+          </selection-collection>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt2'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt3'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt4'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt5'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+      </viewpoints>
+      <active id='4' />
+    </window>
+    <window class='dashboard' name='Inv'>
+      <viewpoints>
+        <viewpoint name='bt1'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt2'>
+          <selection-collection>
+            <tuple-selection>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields />
+                    <y-fields>
+                      <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752456719:nk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752456719:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>&quot;bt2&quot;</value>
+                </tuple>
+              </tuple-reference>
+            </tuple-selection>
+          </selection-collection>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt3'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt4'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt5'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+      </viewpoints>
+      <active id='5' />
+    </window>
+    <window class='dashboard' name='Exp'>
+      <viewpoints>
+        <viewpoint name='bt1'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt2'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt3'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt4'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt5'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+      </viewpoints>
+      <active id='6' />
+    </window>
+    <window class='dashboard' name='Opt'>
+      <viewpoints>
+        <viewpoint name='bt1'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt2'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt3'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt4'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='bt5'>
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+      </viewpoints>
+      <active id='7' />
+    </window>
+    <window class='worksheet' hidden='true' name='bt1'>
+      <cards>
+        <edge name='left'>
+          <strip size='175'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958727651330:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734856195:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734893060:qk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734913541:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958735044615:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958735687688:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752215051:nk]</field>
+          </color-one-way>
+        </highlight>
+        <floating-toolbar-visibility value='1' />
+      </viewpoint>
+    </window>
+    <window class='worksheet' hidden='true' name='bt2'>
+      <cards>
+        <edge name='left'>
+          <strip size='175'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958727651330:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734856195:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734893060:qk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734913541:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958735044615:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958735687688:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752215051:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752456719:nk]</field>
+          </color-one-way>
+        </highlight>
+        <floating-toolbar-visibility value='1' />
+      </viewpoint>
+    </window>
+    <window class='worksheet' hidden='true' name='bt3'>
+      <cards>
+        <edge name='left'>
+          <strip size='175'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958727651330:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734856195:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734893060:qk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734913541:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958735044615:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958735687688:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752215051:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752440334:nk]</field>
+          </color-one-way>
+        </highlight>
+        <floating-toolbar-visibility value='1' />
+      </viewpoint>
+    </window>
+    <window class='worksheet' hidden='true' name='bt4'>
+      <cards>
+        <edge name='left'>
+          <strip size='175'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958727651330:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734856195:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734893060:qk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734913541:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958735044615:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958735687688:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752215051:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752419853:nk]</field>
+          </color-one-way>
+        </highlight>
+        <floating-toolbar-visibility value='1' />
+      </viewpoint>
+    </window>
+    <window class='worksheet' hidden='true' name='bt5'>
+      <cards>
+        <edge name='left'>
+          <strip size='175'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958727651330:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734856195:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734893060:qk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958734913541:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958735044615:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958735687688:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752215051:nk]</field>
+            <field>[mysql.1f9as6b1ilzr0d1b44c981x2wzwb].[none:Calculation_574771958752399372:nk]</field>
+          </color-one-way>
+        </highlight>
+        <floating-toolbar-visibility value='1' />
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Home' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7EAAAOxAGVKw4b
+      AAADoklEQVR4nO3bQatUZRzA4XdMUQotaDEKBkEQXIggaCEEFbVoEbRzU7taWq0CF30BCWrT
+      MmgZQYu+QLSQ6IYEtQjERdZF0Tsa4aUELZtpZQiBeUVmbvyeZzXDHHj/zJzfOWfgnMlisVgM
+      iNq16gFglXbffHH50oUxn89XOQss3T8BzOfzMT14eJWzwNK5BCJNAKQJgDQBkCYA0gRAmgBI
+      EwBpAiBNAKQJgDQBcE/MZrOxvr4+/m931wtgGz76aWtsXrux1DW/Obc1zvxydcfvWJubm+PF
+      4yfGy28cG6dPn17ZHJeu3xivnbo4vr9y/Y62F8A2fPjjlfHkFxvj45+3xtUby7l1/LuLv41X
+      P/thvPfVxrh89Y+lrHm39jz9wjj10tvj2Q8+HceOvzs2NjaWPsN8McbnF34fz508N06c+XVc
+      ++v2v9Pu237Kv+zs4/DOMVnh2nt3TcbRw/vH648eGPvuu/0xXgDb8OZjD41XDj0wDu5b3tf2
+      1KH945OjT4zHH75/TCar3K3+25/ffjme2Toz3n/nrbG2traSGR7cs2t8/fwjY+3A3jvafnLz
+      meDZ5nkPxHDXZrPZOHv27Dhy5MiOD/VWzgDcE9PpdEyn01WPsW3+BJMmANIEQJoASBMAaQIg
+      TQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIE
+      QJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCk
+      CYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoA
+      SBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0
+      AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMA
+      aQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAm
+      ANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIg
+      TQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYC03be+mW2e
+      X9UcsBKTxWKxWPUQsCp/Ay5metCFtxVfAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Scope' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7EAAAOxAGVKw4b
+      AAADkElEQVR4nO3bvYqcZQCG4XfWrJFAkmKLRIhgISuyWogHoNjkCFIkNmIvGLC2MAgStPIY
+      TGOhrRYWIhIkoIVTZDtJyK/rKjFixMxYRazWjST7Ee7rqmaYgfcp5p4fmG+2XC6XA6JWph4A
+      U9p378bNG1fGYrGYcgvsuX8CWCwW48jRY1NugT3nKxBpAiBNAKQJgDQBkCYA0gRAmgBIEwBp
+      AiBNAKQJYJfm8/nY3NycegYPmAB26cKFC+OF02fG62+9Pba2tvbs3POXfh0Xf7o9HoXLNj67
+      fHts3vpz0g037vw1Xvv26vj+lzu7er4A7sPi+Knx8Usnx8ab74wzZz8Y29vbD/3M767eGqc+
+      +WGc/frHcfP2tC+u//L5td/Hq19eHe/Nt8fWnbuTbFgsx/j0ym/j5a8ujfcv/jz+uLvzX/z3
+      7fgoPIL2r8zGiWMHxxtPHxpPPLbze7wA7sPKF+fGyWeOjA8/enesra3tyZkvPnlwnDvx/Fhf
+      OzBms9menPl/HT96YJx+9vBYP/j4ZBsOr66Mb155ajx3aP+unj+7d03w9WuXXRCzg/l8PlZX
+      V8f6+vrUU3iAfALs0sbGxtQTeAj8CCZNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA
+      0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBN
+      AKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRA
+      mgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJ
+      gDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBI
+      EwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQB
+      kCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBp
+      AiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA
+      0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBp+/595/q1y1PtgEnMlsvlcuoRMJW/Aecq
+      cjmW6EoKAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Inv' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7EAAAOxAGVKw4b
+      AAADkUlEQVR4nO3bv4scdRyA4e/GxARDEjsjRBAVxSZwlU1AsdHKLjZpRMRGCwNaW4l2FpaC
+      f4GgrSAWV1gIF0SwOMFfGJJLRE0wt5eTZNcqIghHInhz8j5PNcsMzIeZeYdZmJktl8vlgKh9
+      Uw8AU9p/a+HnyxfGYrGYchbYdX8FsFgsxn3HT0w5C+w6j0CkCYA0AZAmANIEQJoASBMAaQIg
+      TQCkCYA0AZAmgD1sPp+P1dXV4Y31/44A7sD7318dG9dv7Nr+tra2xvNn3xzPnnlpnDt3bs+H
+      8PH5zfHN739MOsPl7RvjzBcXx5dXtm9rewHcgfe+vTJOfvrj+OCHq2Pzxu68On74oZPjwhMv
+      jNPvfjhefu2Nsb6+viv7/Tc+2ZiPpz+7ON76+rfxy/bNSWZYLMf46MK18eTqT+Od9V/H9Zs7
+      n6f9O67lH6a+B89ms4kn2PsO7puN0yeOjBcfPDoO3bXzPV4Ad+DVh+8dz91/eBw/tHuHbfO7
+      r8YjB66Nt19/ZaysrOzpAJ45fs84+9ix8eiRuyeb4diBfePzpx4Yjx89eFvbz259E3xp47wP
+      YvaY+Xw+1tbWxqlTp/b0hf9/JgDS/AkmTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAm
+      ANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIg
+      TQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIE
+      QJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCk
+      CYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoA
+      SBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0
+      AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMA
+      aQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAm
+      ANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAafv//uPSxvmp5oBJzJbL5XLqIWAqfwI1
+      LYAWfevBDwAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Exp' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7EAAAOxAGVKw4b
+      AAADVklEQVR4nO3bMYscZRzA4XfjxUQlEbEwQgqrgBZ+hYAfwM7GdH4XQWztFPwCFqYVxEIs
+      go0WWiQQknBH7pKYmCWu5vRuxyoiCJfEYkf5PU+1ww7MH2Z+L7sw72KapmlA1LG5B4A5bT36
+      cOf2zbFer+ecBTburwDW6/V45czZOWeBjfMTiDQBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA
+      0gRAmgCewifXlmPv4cFGr3lpezku/7Qa/4dtGxd3VuPKg99nneH2/sG48O3u+P7+/hOdL4Cn
+      8NHV++PNL2+MT68vx+pgM6+Of7f7YLz72Q/jw29ujDureR+ux/li79fx1le74/0ffx539w9n
+      mWE9jfH5zV/G+a+3xweX742Hh0ffp60jv+Uf/vvrMCeOLcY7Z0+N9147PU4+c/Qav3i0JfLW
+      3o79AI/x8bXlePvVF8aZk5tbNy5tL8dLz22Ncy8/PxaLxcau+29c3FmNN148Ps6dena2GX47
+      XI/rqz/G66dPPNH5AiDNfwDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmA
+      NAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgT
+      AGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQ
+      JgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkC
+      IE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDS
+      BECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0A
+      pAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECa
+      AEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmA
+      NAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDStv5+cGtvZ645YBaLaZqmuYeAufwJiql3QAP0
+      6M8AAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Opt' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7EAAAOxAGVKw4b
+      AAADbElEQVR4nO3bP4scZRzA8WfX0zuFRDSCFimsAmptIQiC7yEg2vlaFMTXYWdhWi0iiEVI
+      o0UsYqXekbvL+S+em3gxt2sVUZBLDmFH/H4+1Q4zML/i+Q6zMM9stVqtBkTNpx4AprRx/8fB
+      zRtjuVxOOQus3Z8BLJfL8exz56ecBdbOKxBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJ
+      4BQW95bj2Nfj/ysCOIVPD26Ply9/Nz7ZX4x1baO4sn1rXP9+fff7Ny7tLMbXh3cnneHm0b3x
+      1tXd8eXPRw91vQBO6dovd8cbV3fHB9uHY7mGRfnF7uF488Nr4/3Pvx0Hi2kX14N8vHd7vH55
+      d7z71U/jh6PjSWZYrsb46Mav47XPtsd7138cvx2f/In/xoln+Zv5bDZePbc13nnpmfHK01tj
+      NptNPRL/YHM+GxfPnxlvP392bD1y8jN+dn9L5P7ejv0AD3DneDk257MxX+PCv7J9azz1+Ma4
+      cO6J/3xwl3YW48UnHx0Xzjw22Qx3jpfjm8Xv44Wzmw91vQBI8x+ANAGQJgDSBECaAEgTAGkC
+      IE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDS
+      BECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0A
+      pAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECa
+      AEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmA
+      NAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgT
+      AGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQ
+      JgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkC
+      IE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmAtI2/Huzv
+      7Uw1B0xitlqtVlMPAVP5AxbLgxgUTUT6AAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
