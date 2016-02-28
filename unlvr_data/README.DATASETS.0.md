@@ -31,9 +31,9 @@ Datasets con los cuales se trabaja
 | country_id               | por pais va la categoria (se replican entre paises)  |
 | name                     | nombre de categoria                               |
 | decay_rate:              |                                                   |
-| ceiling_{L|C|S|O}:       |(tope) 											   |
+| ceiling_{L,C,S,O}:       |(tope) 											   |
 | decay_speed              |                                                   |
-| competitor_hit_{L|C|S|O} |												   |
+| competitor_hit_{L,C,S,O} |												   |
 | non_tv_effectiveness     |												   |
 
 # Category_Data
