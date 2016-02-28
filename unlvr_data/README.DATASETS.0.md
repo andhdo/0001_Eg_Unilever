@@ -3,33 +3,30 @@ Datasets con los cuales se trabaja
 # Countries
 > Paises a analizar
 
------------------------|---------------------------------------------------|
- Field                 |  Description                                      |
------------------------|---------------------------------------------------|
- country_id            | (identificador interno)  	|
- country_name 	        | nombre del pais           |
- region               	|                           | 
------------------------|---------------------------------------------------|
+| Field                 |  Description                                      |
+| --------------------- | ------------------------------------------------- |
+| country_id            | (identificador interno)  	|
+| country_name 	        | nombre del pais           |
+| region               	|                           | 
 
 
 # Brand
 > Modela la marca de determinado producto (tanto de unilever como de la competencia) y que pertenece a determinada categoria  
-|-----------------------|---------------------------------------------------|
+
 | Field                 |  Description                                      |
-|-----------------------|---------------------------------------------------|
+| --------------------- | ------------------------------------------------- |
 | brand_id              | (identificador interno)                           |
 | name                  | nombre de marca |
 | local_name            | nombre que se asume cuando está en determinado pais |
 | is_UL                 | modela si la marca es gobernada por UL |
 | brand_status          |  |
 | cat_id 	            | [join:catgoria] categoria a la que pertenece la marca |
-|-----------------------|---------------------------------------------------|
 
 # Categories
  > identificador de categoria
-|--------------------------|---------------------------------------------------|
+
 | Field                    |  Description                                      |
-|--------------------------|---------------------------------------------------|
+| ------------------------ | ------------------------------------------------- |
 | cat_id                   | (identificador interno)                           |
 | country_id               | por pais va la categoria (se replican entre paises)  |
 | name                     | nombre de categoria                               |
@@ -38,13 +35,12 @@ Datasets con los cuales se trabaja
 | decay_speed              |                                                   |
 | competitor_hit_{L|C|S|O} |												   |
 | non_tv_effectiveness     |												   |
-|--------------------------|---------------------------------------------------|
 
 # Category_Data
  > datos por año de cada categoria
-|-----------------------|---------------------------------------------------|
+
 | Field                 |  Description                                      |
-|-----------------------|---------------------------------------------------|
+| --------------------- | ------------------------------------------------- |
 | year					| año del reporte entregado							|
 | cat_id				| [join:categoria]									|
 | market_size			| valor estimado del presupuesto del mercado (al parecer tienen un presupuesto y hacen a proyeccion segun la participacion en el mercado)  [unidad:miles-de-euros]    				|
@@ -54,26 +50,25 @@ Datasets con los cuales se trabaja
 | media_spending_all    | |
 | incremental_usage     | |
 | conviction_cat        | |
-|-----------------------|---------------------------------------------------|
+| --------------------- | ------------------------------------------------- |
 
 
 
 # Financial_Data
 > datos financieros capturados; nótese que sólo se tienen los de UL
-|-----------------------|--------------------------------------------------|
+
 | Field                 |  Description                                     |
-|-----------------------|---------------------------------------------------|
+| --------------------- | ------------------------------------------------- |
 | brand_id              | marca												|
 | year                  | año reportado										|
 | turnover              | ventas netas / volumen de ventas [unidad:miles-de-euros] 						|
 | gross_margin          | [GP] Gross Profit o Gross Margin  ganancia (bruta), [volumen/margen de ganancias = (Ingresos - Costo de Articulo vendido)/ Ingresos] diferencia entre ingresos menos costos (de lo que vende) dividido ingresos (cuanto de las ventas es utilidad:profit). [Unidad:%] |
-|-----------------------|---------------------------------------------------|
 
 # Media Data
 > Datos de medios y la inversion realizada para obtener beneficio
-|-----------------------|--------------------------------------------------|
+
 | Field                 |  Description                                     |
-|-----------------------|--------------------------------------------------|
+| --------------------- | ------------------------------------------------ |
 | brand_id              | (join:brand)                                     |
 | year                  | año reportado	                                   |      
 | tv_.                  | del valor en medios, cuánto es para television [unidad:%] |
@@ -82,25 +77,23 @@ Datasets con los cuales se trabaja
 | share_of_value        | [unidad:%]                                                  |
 | growth                |                                                  | 
 | how_many              | [unidad:conteo]                                          |     
-|-----------------------|--------------------------------------------------|
 
 # Tracking Data
 > Medidas del mercado
-|-----------------------|--------------------------------------------------|
+
 | Field                 |  Description                                     |
-|-----------------------|--------------------------------------------------|
+| --------------------- | ------------------------------------------------ |
 | brand_id              | (join:brand)                                    |
 | year                  | año reportado                                   |
 | conviction            | convencimiento de la marca (estimacion de la credibilidad) [unidad:puntaje]                  |
 | ai                    | brand awareness,interest,conviction, purchase/importance? importancia del conocimiento de marca         |
 | ai2c                  |                                                  |
-|-----------------------|--------------------------------------------------|
 
 # Otras definiciones
-|------------------------|--------------------------------------------------|
+
 | Término                |  Description                                     |
-|------------------------|---------------------------------------------------|
- Percentil                   
+| ---------------------: | ------------------------------------------------ |
+| Percentil              | |                   
                              
                              
                              
