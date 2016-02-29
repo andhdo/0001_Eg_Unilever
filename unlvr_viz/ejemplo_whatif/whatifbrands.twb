@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
-<!-- build 9200.16.0204.1543                                -->
+<!-- build 9200.15.1201.0018                                -->
 <workbook source-platform='win' version='9.2' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
@@ -9,8 +9,8 @@
   <datasources>
     <datasource hasconnection='false' inline='true' name='Parameters' version='9.2'>
       <aliases enabled='yes' />
-      <column caption='AI' datatype='integer' name='[ Parámetro 1]' param-domain-type='range' role='measure' type='quantitative' value='3'>
-        <calculation class='tableau' formula='3' />
+      <column caption='AI' datatype='integer' name='[ Parámetro 1]' param-domain-type='range' role='measure' type='quantitative' value='24'>
+        <calculation class='tableau' formula='24' />
         <range max='100' min='0' />
       </column>
       <column caption='GRP Cost' datatype='integer' name='[AI (copia)]' param-domain-type='range' role='measure' type='quantitative' value='2760'>
@@ -21,17 +21,17 @@
         <calculation class='tableau' formula='24' />
         <range max='100' min='0' />
       </column>
-      <column caption='% UL share' datatype='real' default-format='p0.00%' name='[GRP Cost (copia 2)]' param-domain-type='range' role='measure' type='quantitative' value='0.20310155077538769'>
-        <calculation class='tableau' formula='0.20310155077538769' />
+      <column caption='% UL share' datatype='real' default-format='p0.00%' name='[GRP Cost (copia 2)]' param-domain-type='range' role='measure' type='quantitative' value='0.44272136068034018'>
+        <calculation class='tableau' formula='0.44272136068034018' />
         <range max='1.0' min='0.0' />
       </column>
-      <column caption='Category Value (% of current value)' datatype='real' default-format='p0.00%' name='[GRP Cost (copia)]' param-domain-type='range' role='measure' type='quantitative' value='1.2231115557778889'>
-        <calculation class='tableau' formula='1.2231115557778889' />
+      <column caption='Category Value (% of current value)' datatype='real' default-format='p0.00%' name='[GRP Cost (copia)]' param-domain-type='range' role='measure' type='quantitative' value='2.4212106053026514'>
+        <calculation class='tableau' formula='2.4212106053026514' />
         <range max='5.0' min='0.0' />
       </column>
     </datasource>
     <datasource caption='categories+ (tableauconnect)' inline='true' name='mysql.0gsqj3u1dee6u813bkl0u1g83m2b' version='9.2'>
-      <connection class='mysql' dbname='tableauconnect' odbc-native-protocol='yes' port='3306' server='localhost' source-charset='' username='marizperoj'>
+      <connection class='mysql' dbname='tableauconnect' odbc-native-protocol='yes' port='3306' server='192.168.0.17' source-charset='' username='root'>
         <relation join='right' type='join'>
           <clause type='join'>
             <expression op='='>
@@ -1324,6 +1324,9 @@
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
+      <column caption='x_TurnOver_Others' datatype='real' name='[Calc1 (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[turnover] * (1-[market_share_UL]) / [market_share_UL]' />
+      </column>
       <column caption='Category Brand' datatype='string' name='[Calculation_1045679594065256448]' role='dimension' type='nominal'>
         <calculation class='tableau' formula='[name]+&quot; - &quot;+[name (brands)]' />
       </column>
@@ -1363,6 +1366,9 @@
       <column caption='TO return' datatype='real' name='[Calculation_837388111025274896]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='[Calculation_837388110997245954]*(1-exp(-[Calculation_837388110995812353]*[Calculation_837388111014227972]))' />
       </column>
+      <column caption='x_TurnOver_Unilever' datatype='real' name='[Calculation_848928586474606592]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[turnover]' />
+      </column>
       <column caption='Net TO return dy/dx' datatype='real' name='[Net TO return (copia)]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='[Calculation_837388110995812353]*[Calculation_837388110997245954]*(exp(-[Calculation_837388110995812353]*[Calculation_837388111014227972]))-[Calculation_837388111024947215]' />
       </column>
@@ -1400,6 +1406,7 @@
       <column caption='Conviction Gain' datatype='real' name='[conviction_gain]' role='measure' type='quantitative' />
       <column caption='Conviction Growth Factor' datatype='real' name='[conviction_growth_factor]' role='measure' type='quantitative' />
       <column caption='Conviction Lost' datatype='real' name='[conviction_lost]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[country_id]' role='measure' type='quantitative' />
       <column caption='Decay' datatype='real' name='[decay]' role='measure' type='quantitative' />
       <column caption='Decay Rate' datatype='real' name='[decay_rate]' role='measure' type='quantitative' />
       <column caption='Decay Speed' datatype='integer' name='[decay_speed]' role='measure' type='quantitative' />
@@ -1430,6 +1437,9 @@
       <column caption='Turnover' datatype='real' name='[turnover]' role='measure' type='quantitative' />
       <column caption='Tv .' datatype='real' name='[tv_.]' role='measure' type='quantitative' />
       <column caption='Tv Cut Trough' datatype='real' name='[tv_cut_trough]' role='measure' type='quantitative' />
+      <column caption='x_TurnOver_Unilever (bin)' datatype='integer' name='[x_TurnOver_Unilever (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='4' formula='[Calculation_848928586474606592]' peg='0' size='37376' />
+      </column>
       <column caption='Year (Calculated Params)' datatype='real' name='[year (calculated_params)]' role='dimension' type='quantitative' />
       <column caption='Year (Category Data)' datatype='integer' name='[year (category_data)]' role='dimension' type='quantitative' />
       <column caption='Year (Financial Data)' datatype='integer' name='[year (financial_data)]' role='dimension' type='quantitative' />
@@ -1439,37 +1449,269 @@
       <column-instance column='[Calculation_837388110998437891]' derivation='Attribute' name='[attr:Calculation_837388110998437891:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Calculation_837388111025274896]' derivation='Attribute' name='[attr:Calculation_837388111025274896:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Net TO return (copia)]' derivation='Attribute' name='[attr:Net TO return (copia):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calc1 (copy)]' derivation='Sum' name='[sum:Calc1 (copy):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1045679594070355969]' derivation='Sum' name='[sum:Calculation_1045679594070355969:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Calculation_1045679594071007236]' derivation='Sum' name='[sum:Calculation_1045679594071007236:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_837388110995431424]' derivation='Sum' name='[sum:Calculation_837388110995431424:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_837388110995812353]' derivation='Sum' name='[sum:Calculation_837388110995812353:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_837388110997245954]' derivation='Sum' name='[sum:Calculation_837388110997245954:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Calculation_837388110998437891]' derivation='Sum' name='[sum:Calculation_837388110998437891:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_837388111014555653]' derivation='Sum' name='[sum:Calculation_837388111014555653:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_837388111015739398]' derivation='Sum' name='[sum:Calculation_837388111015739398:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_837388111015858183]' derivation='Sum' name='[sum:Calculation_837388111015858183:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_837388111024947215]' derivation='Sum' name='[sum:Calculation_837388111024947215:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Calculation_837388111025274896]' derivation='Sum' name='[sum:Calculation_837388111025274896:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_848928586474606592]' derivation='Sum' name='[sum:Calculation_848928586474606592:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Net TO return (copia)]' derivation='Sum' name='[sum:Net TO return (copia):qk]' pivot='key' type='quantitative' />
-      <layout dim-ordering='alphabetic' dim-percentage='0.384719' measure-ordering='alphabetic' measure-percentage='0.501341' parameter-percentage='0.113941' show-structure='true' user-set-layout='true' />
+      <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ai2c]' derivation='Sum' name='[sum:ai2c:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ai]' derivation='Sum' name='[sum:ai:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[boost]' derivation='Sum' name='[sum:boost:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[brand_value_share_change]' derivation='Sum' name='[sum:brand_value_share_change:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ceiling]' derivation='Sum' name='[sum:ceiling:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ceiling_C]' derivation='Sum' name='[sum:ceiling_C:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ceiling_L]' derivation='Sum' name='[sum:ceiling_L:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ceiling_O]' derivation='Sum' name='[sum:ceiling_O:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[ceiling_S]' derivation='Sum' name='[sum:ceiling_S:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[competitor_hit]' derivation='Sum' name='[sum:competitor_hit:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[competitor_hit_C]' derivation='Sum' name='[sum:competitor_hit_C:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[competitor_hit_L]' derivation='Sum' name='[sum:competitor_hit_L:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[competitor_hit_O]' derivation='Sum' name='[sum:competitor_hit_O:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[competitor_hit_S]' derivation='Sum' name='[sum:competitor_hit_S:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[conviction]' derivation='Sum' name='[sum:conviction:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[conviction_cat]' derivation='Sum' name='[sum:conviction_cat:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[conviction_gain]' derivation='Sum' name='[sum:conviction_gain:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[conviction_growth_factor]' derivation='Sum' name='[sum:conviction_growth_factor:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[conviction_lost]' derivation='Sum' name='[sum:conviction_lost:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[country_id]' derivation='Sum' name='[sum:country_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[decay]' derivation='Sum' name='[sum:decay:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[decay_rate]' derivation='Sum' name='[sum:decay_rate:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[decay_speed]' derivation='Sum' name='[sum:decay_speed:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[estimated_conviction]' derivation='Sum' name='[sum:estimated_conviction:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[fair_share]' derivation='Sum' name='[sum:fair_share:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[gained_fraction]' derivation='Sum' name='[sum:gained_fraction:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[gp_return]' derivation='Sum' name='[sum:gp_return:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[gross_margin]' derivation='Sum' name='[sum:gross_margin:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[growth]' derivation='Sum' name='[sum:growth:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[growth_2y]' derivation='Sum' name='[sum:growth_2y:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[growth_5y]' derivation='Sum' name='[sum:growth_5y:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[grp_cost]' derivation='Sum' name='[sum:grp_cost:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[how_many]' derivation='Sum' name='[sum:how_many:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[incremental_usage]' derivation='Sum' name='[sum:incremental_usage:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[is_UL]' derivation='Sum' name='[sum:is_UL:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[market_share_UL]' derivation='Sum' name='[sum:market_share_UL:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[market_size]' derivation='Sum' name='[sum:market_size:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[media_spending_all]' derivation='Sum' name='[sum:media_spending_all:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[non_tv_effectiveness]' derivation='Sum' name='[sum:non_tv_effectiveness:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[protected_fraction]' derivation='Sum' name='[sum:protected_fraction:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[share_of_value]' derivation='Sum' name='[sum:share_of_value:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[spending]' derivation='Sum' name='[sum:spending:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[to_return]' derivation='Sum' name='[sum:to_return:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[total_cut_through]' derivation='Sum' name='[sum:total_cut_through:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[turnover]' derivation='Sum' name='[sum:turnover:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[tv_.]' derivation='Sum' name='[sum:tv_.:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[tv_cut_trough]' derivation='Sum' name='[sum:tv_cut_trough:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.385776' measure-ordering='alphabetic' measure-percentage='0.321121' parameter-percentage='0.293103' show-structure='true' user-set-layout='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#17becf'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calculation_837388111014555653:qk]&quot;</bucket>
+            </map>
+            <map to='#17becf'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:decay_rate:qk]&quot;</bucket>
+            </map>
+            <map to='#17becf'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:gp_return:qk]&quot;</bucket>
+            </map>
             <map to='#1f77b4'>
               <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[attr:Calculation_837388110998437891:qk]&quot;</bucket>
             </map>
             <map to='#1f77b4'>
               <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calculation_837388110998437891:qk]&quot;</bucket>
             </map>
+            <map to='#1f77b4'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calculation_848928586474606592:qk]&quot;</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:growth:qk]&quot;</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:turnover:qk]&quot;</bucket>
+            </map>
             <map to='#2ca02c'>
               <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[attr:Calculation_837388111025274896:qk]&quot;</bucket>
             </map>
             <map to='#2ca02c'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calculation_837388110997245954:qk]&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
               <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calculation_837388111025274896:qk]&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:how_many:qk]&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calculation_837388111015739398:qk]&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:conviction_growth_factor:qk]&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:protected_fraction:qk]&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:competitor_hit_L:qk]&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:competitor_hit:qk]&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:spending:qk]&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calculation_1045679594070355969:qk]&quot;</bucket>
             </map>
             <map to='#9467bd'>
               <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calculation_1045679594071007236:qk]&quot;</bucket>
             </map>
+            <map to='#9467bd'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:ceiling_S:qk]&quot;</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:boost:qk]&quot;</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:ceiling_C:qk]&quot;</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:incremental_usage:qk]&quot;</bucket>
+            </map>
+            <map to='#9edae5'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calc1 (copy):qk]&quot;</bucket>
+            </map>
+            <map to='#9edae5'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:decay_speed:qk]&quot;</bucket>
+            </map>
+            <map to='#9edae5'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:gross_margin:qk]&quot;</bucket>
+            </map>
+            <map to='#9edae5'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:total_cut_through:qk]&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:ai:qk]&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calculation_837388111015858183:qk]&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:growth_2y:qk]&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:tv_.:qk]&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calculation_837388110995431424:qk]&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calculation_837388110995812353:qk]&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:fair_share:qk]&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:competitor_hit_O:qk]&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:conviction:qk]&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:to_return:qk]&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:ceiling:qk]&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:competitor_hit_C:qk]&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:share_of_value:qk]&quot;</bucket>
+            </map>
+            <map to='#c7c7c7'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:conviction_lost:qk]&quot;</bucket>
+            </map>
+            <map to='#c7c7c7'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:estimated_conviction:qk]&quot;</bucket>
+            </map>
+            <map to='#c7c7c7'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:is_UL:qk]&quot;</bucket>
+            </map>
             <map to='#d62728'>
               <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b]&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:ceiling_L:qk]&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:market_size:qk]&quot;</bucket>
+            </map>
+            <map to='#dbdb8d'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:decay:qk]&quot;</bucket>
+            </map>
+            <map to='#dbdb8d'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:gained_fraction:qk]&quot;</bucket>
+            </map>
+            <map to='#dbdb8d'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:market_share_UL:qk]&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:competitor_hit_S:qk]&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:conviction_cat:qk]&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:non_tv_effectiveness:qk]&quot;</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:conviction_gain:qk]&quot;</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:country_id:qk]&quot;</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Number of Records:qk]&quot;</bucket>
             </map>
             <map to='#ff7f0e'>
               <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[attr:Net TO return (copia):qk]&quot;</bucket>
             </map>
             <map to='#ff7f0e'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:growth_5y:qk]&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
               <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Net TO return (copia):qk]&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:tv_cut_trough:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:brand_value_share_change:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:ceiling_O:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:media_spending_all:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:ai2c:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Calculation_837388111024947215:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:grp_cost:qk]&quot;</bucket>
             </map>
           </encoding>
         </style-rule>
@@ -1479,20 +1721,20 @@
       </semantic-values>
       <date-options start-of-week='monday' />
       <datasource-dependencies datasource='Parameters'>
-        <column caption='AI' datatype='integer' name='[ Parámetro 1]' param-domain-type='range' role='measure' type='quantitative' value='3'>
-          <calculation class='tableau' formula='3' />
+        <column caption='AI' datatype='integer' name='[ Parámetro 1]' param-domain-type='range' role='measure' type='quantitative' value='24'>
+          <calculation class='tableau' formula='24' />
           <range max='100' min='0' />
         </column>
         <column caption='GRP Cost' datatype='integer' name='[AI (copia)]' param-domain-type='range' role='measure' type='quantitative' value='2760'>
           <calculation class='tableau' formula='2760' />
           <range max='5000' min='0' />
         </column>
-        <column caption='% UL share' datatype='real' default-format='p0.00%' name='[GRP Cost (copia 2)]' param-domain-type='range' role='measure' type='quantitative' value='0.20310155077538769'>
-          <calculation class='tableau' formula='0.20310155077538769' />
+        <column caption='% UL share' datatype='real' default-format='p0.00%' name='[GRP Cost (copia 2)]' param-domain-type='range' role='measure' type='quantitative' value='0.44272136068034018'>
+          <calculation class='tableau' formula='0.44272136068034018' />
           <range max='1.0' min='0.0' />
         </column>
-        <column caption='Category Value (% of current value)' datatype='real' default-format='p0.00%' name='[GRP Cost (copia)]' param-domain-type='range' role='measure' type='quantitative' value='1.2231115557778889'>
-          <calculation class='tableau' formula='1.2231115557778889' />
+        <column caption='Category Value (% of current value)' datatype='real' default-format='p0.00%' name='[GRP Cost (copia)]' param-domain-type='range' role='measure' type='quantitative' value='2.4212106053026514'>
+          <calculation class='tableau' formula='2.4212106053026514' />
           <range max='5.0' min='0.0' />
         </column>
       </datasource-dependencies>
@@ -1504,23 +1746,23 @@
         <view>
           <datasources>
             <datasource caption='categories+ (tableauconnect)' name='mysql.0gsqj3u1dee6u813bkl0u1g83m2b' />
-            <datasource caption='Parámetros' name='Parameters' />
+            <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='AI' datatype='integer' name='[ Parámetro 1]' param-domain-type='range' role='measure' type='quantitative' value='3'>
-              <calculation class='tableau' formula='3' />
+            <column caption='AI' datatype='integer' name='[ Parámetro 1]' param-domain-type='range' role='measure' type='quantitative' value='24'>
+              <calculation class='tableau' formula='24' />
               <range max='100' min='0' />
             </column>
             <column caption='GRP Cost' datatype='integer' name='[AI (copia)]' param-domain-type='range' role='measure' type='quantitative' value='2760'>
               <calculation class='tableau' formula='2760' />
               <range max='5000' min='0' />
             </column>
-            <column caption='% UL share' datatype='real' default-format='p0.00%' name='[GRP Cost (copia 2)]' param-domain-type='range' role='measure' type='quantitative' value='0.20310155077538769'>
-              <calculation class='tableau' formula='0.20310155077538769' />
+            <column caption='% UL share' datatype='real' default-format='p0.00%' name='[GRP Cost (copia 2)]' param-domain-type='range' role='measure' type='quantitative' value='0.44272136068034018'>
+              <calculation class='tableau' formula='0.44272136068034018' />
               <range max='1.0' min='0.0' />
             </column>
-            <column caption='Category Value (% of current value)' datatype='real' default-format='p0.00%' name='[GRP Cost (copia)]' param-domain-type='range' role='measure' type='quantitative' value='1.2231115557778889'>
-              <calculation class='tableau' formula='1.2231115557778889' />
+            <column caption='Category Value (% of current value)' datatype='real' default-format='p0.00%' name='[GRP Cost (copia)]' param-domain-type='range' role='measure' type='quantitative' value='2.4212106053026514'>
+              <calculation class='tableau' formula='2.4212106053026514' />
               <range max='5.0' min='0.0' />
             </column>
           </datasource-dependencies>
@@ -1592,7 +1834,7 @@
             </groupfilter>
           </filter>
           <filter class='categorical' column='[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:Calculation_1045679594065256448:nk]' context='true'>
-            <groupfilter function='member' level='[none:Calculation_1045679594065256448:nk]' member='&quot;Hair Care - Others&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <groupfilter function='member' level='[none:Calculation_1045679594065256448:nk]' member='&quot;Hair Care - Dove&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
           <filter class='quantitative' column='[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:year:qk]' context='true' included-values='in-range'>
             <min>2015.0</min>
@@ -1671,38 +1913,94 @@
         <cols>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:Calculation_837388111014227972:qk]</cols>
       </table>
     </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='categories+ (tableauconnect)' name='mysql.0gsqj3u1dee6u813bkl0u1g83m2b' />
+          </datasources>
+          <datasource-dependencies datasource='mysql.0gsqj3u1dee6u813bkl0u1g83m2b'>
+            <column caption='Brand Id' datatype='integer' name='[brand_id]' role='dimension' type='ordinal' />
+            <column-instance column='[brand_id]' derivation='None' name='[none:brand_id:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[year (category_data)]' derivation='None' name='[none:year (category_data):qk]' pivot='key' type='quantitative' />
+            <column caption='Year (Category Data)' datatype='integer' name='[year (category_data)]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:brand_id:ok]'>
+            <groupfilter function='member' level='[none:brand_id:ok]' member='1' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:year (category_data):qk]' included-values='in-range'>
+            <min>2015</min>
+            <max>2015</max>
+          </filter>
+          <slices>
+            <column>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:year (category_data):qk]</column>
+            <column>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:brand_id:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
   </worksheets>
   <windows source-height='28'>
-    <window class='worksheet' maximized='true' name='Brands: Whatif'>
+    <window class='worksheet' name='Brands: Whatif'>
       <cards>
         <edge name='left'>
-          <strip size='203'>
+          <strip size='0'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
-            <card type='measures' />
             <card pane-specification-id='3' param='[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[:Measure Names]' type='color' />
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='2147483647'>
+          <strip size='0'>
             <card type='columns' />
           </strip>
-          <strip size='2147483647'>
+          <strip size='0'>
             <card type='rows' />
-          </strip>
-        </edge>
-        <edge name='right'>
-          <strip size='215'>
-            <card mode='dropdown' param='[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:Calculation_1045679594065256448:nk]' type='filter' values='relevant' />
-            <card mode='slider' param='[Parameters].[AI (copia)]' type='parameter' />
-            <card mode='slider' param='[Parameters].[ Parámetro 1]' type='parameter' />
-            <card mode='slider' param='[Parameters].[GRP Cost (copia)]' type='parameter' />
-            <card mode='slider' param='[Parameters].[GRP Cost (copia 2)]' type='parameter' />
           </strip>
         </edge>
       </cards>
       <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:Calculation_837388111014227972:qk]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Net TO return (copia):qk]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:Calculation_837388111014227972:qk]</field>
+                  <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Net TO return (copia):qk]</field>
+                  <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[attr:X:qk]</field>
+                  <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[:Measure Names]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>0.0</value>
+                <value>0.016037477353342214</value>
+                <value>0</value>
+                <value>&quot;[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[sum:Net TO return (copia):qk]&quot;</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
         <highlight>
           <color-one-way>
             <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[:Measure Names]</field>
@@ -1727,168 +2025,240 @@
         </highlight>
       </viewpoint>
     </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:year (category_data):qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[:Measure Names]</field>
+            <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:Calc1 (copy):ok]</field>
+            <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:Calc1 (copy):qk]</field>
+            <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:Calculation_848928586474606592:ok]</field>
+            <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:Calculation_848928586474606592:qk]</field>
+            <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:brand_id:ok]</field>
+            <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[none:year (category_data):qk]</field>
+            <field>[mysql.0gsqj3u1dee6u813bkl0u1g83m2b].[x_TurnOver_Unilever (bin)]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
   </windows>
   <thumbnails>
     <thumbnail height='192' name='Brands: Whatif' width='192'>
       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
-      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
+      AAAgAElEQVR4nO2daXNb15nnf3cFcLERC3dSpEQttiVLXmLHmThu9yS91aR73FWTN5NM1VRe
+      TtV8hs736J5+N1PdmZ5pT3fSdhYndrxIXiRLsjZroURxJ0iQ2Je7nHkBgpZESAJJEADJ8yvD
+      IkDwPs8Bzv+e9XmOIoQQSCQHFLXTDkgknUSv/yCEQDYGkoOG/uCTfD7fsgsXi0Usy2rZ9VqB
+      67pomiZtdIGN+g1XVXe3E/K0cmwIQFEUIpFIywwLIbZ0vVQqRW9vb8vsN6JarWKaprTRBTY8
+      z8PzPHRdf/qbd8DTyiHHAJIDjRSA5ECzu+2PBKh1B13h4gkPIQSe8GoPz2v8+gPPBWKjv1z/
+      2fM8FEVB8M1rAAJB7T/xkO2NnxGb/Gro7/p1UDZe2H7Zd/LHbUAKYAfUK6UnPFzPpepWKZaL
+      eCUP27NxPAfHdXA85+G/W68UqqI+9qEoCoqioKKiqErtNWqvua6Lruu15yjU/qvVVkVZ/7de
+      ex/4XZ2Hnjf4PYDjOA/1z+t2tsujNuo3AF3b3SpoOzaGbjz291IATVK/W3rCo1gtUqgWKNkl
+      qm51o5IbmoGhGfh1P4ZmEDACGJqBrupoioaqbq7k26Etg2BlnwyCeXI5ukYAhvF4lXYS27XJ
+      VXIUKgUK1QIVt4KpmQSMAEEzSFyP49N9mLqJqqhtqZyS1rEtAbiVDFdup4gZRWYLOsNhjWBf
+      P0vzaZ45cWRbLeV274atRgiB4zkUqgVWi6sUqgUMzSDkCzEQGcAyLHRV3+iiSPY2WxaAEC5X
+      Ll/k9kIFS/cwHYdbAZfpzy/xZ3/+w510EzuKEIJitUiqkKJQLaAqKj2BHvrD/QSMgKzs+5Qt
+      C8Ct5piZTbG8UmKgvxddAV0oHBkbYGpmkWRohGKxSKlUIhAINH3drb5/OziO0/D1kl1ipbRC
+      wS7Q4+9hODRMwAxsDNxs296xjVayH2zUZ7Y8z9tVO08rx5YFoPt6+A9vvcXU1AIBpchsXmcw
+      rBLsGyI1M4NmGESjUYAt9YU1TWtL37luQwhBxa2wlFsiW87SE+hhpGcEQzN2fLdvZzn2qo12
+      DYLhyeXYpnWdsbERAPoeeDU8cWR7l2szrueymFtktbhK0BdkIjmBX/fLbs4BpGtmgdqF7dpM
+      pafwhMd4fBzLtGTFP8AcKAGUnBJz6Tks02KkZwRN3d0dlZLu50AIQAhBppRhNjNLIpigL9yH
+      qshtUJIDIAAhBKl8isX8Iv3BfnrDvbLLI9mgawSwGyvBQgjmMnOsldeYSEygo8vKL3mIrukH
+      7EbFTBfTG5U/YOzuGoNkb9I1LUArEUJQskvMZ+cZ6RnBb/g77ZKkS+maFsB13dZdS7hMrU6R
+      DCaJ+qMtu65k/9E1LUCrBOAJj5m1GXy6j75w3xO7VkIIXE9QdVzKVZdS1abqeCgPbZev7YM3
+      NBWfoWHqGoamomsqmio3xO11ukYAraA+41OySxxNHm041Vnb9Oawki1RqDg4bi36ytBVLNPA
+      1DVUFerBUmL9f1XHJVeqUnXc9WApBU1VCJg6Qb+B5TPwGRoys8zeYl8JIF/Jk8qnGI+PY2gP
+      zyoJqFX8dJFcqUpP0Ed/j4Xf0PAZtWCVZu7lte3SAttxqToexYpNplhhPp1HAD5dJRTwEQ4Y
+      hPwmutY1vUxJA/aNAGzX5v7qfQYiAwTN4MbrQghypSoLa0VKFZtEOMDoaAJD215ElqIoGJqC
+      oalYPohaPupBs1XHI1soUbI95tIFKnYWv6kRCfgIBQyCPkN2m7qMfSEAIQRL+SUCZoC4Fd+o
+      YI7rcT+VpbBe8YdjASy/r6UVsHap2vV8hkbUMuk1TTxPYLse+XKVXLHK9HIZzxME/QZRyyQU
+      MGvdLSmGjrJlAXhOiY/efx8vPESPSDOTNzjcoxEaGmZhPs+rLz/X9qAY27VJF9NMJCY2+v2O
+      63F3MYMnBCeG4xiaim3bbbv7qqqCT9XwGQES4QCeJyhVHbKlCiu5MjMrefyGTsQyiQZ9BEwd
+      he6JjDsobFkAqh7g9Kln+P35mxQ1lVA1z4xX5eaXN/nJT36y7cq/k33hqXyKoBnEMmupGG3H
+      5c5CBl1TmOjv6Yp+uKoqBP0GQb/BYKzmY7ZUJVOskJovoSoKPUEfUcsk6DfRVCmEdrD1iDCn
+      xOxSHs2uIhRYFSq9WoA/fuNZvvjiEn/02vOUthER5jgO1Wp1q+5QdausllYZjY5SrVap2C73
+      V/IETIOhWADPdai639jYbbZiI+zTCPss3KigbHtkSzb3l3N4nsAy1ZoYfMYmAXdbObbDno0I
+      UzU/A/0Jhg5P4KdCtqoSMhUMK8Rofw7DMDC3ERFmmua2IpCWM8tYpkUkEKlV/nSOoN/kUDKC
+      2uAu2q2RVAE/xMIBXM+jWHFYK1RYzFYQokLIbxAL+Qn5jY2WoVvL0Sx7NiJMURQS/UPrzywe
+      vMebPdtfdd3OnaDe9z8cP0zV8bg1v0pP0M9wIrRnB5eaqhIOmIQDJsMiRLFis1aoMLOSw/UE
+      kYBJ2K8R0w3ZTWoBXTMLtNUmtz7zEzSDBEyLu4sZwgGTkURo3wwkVUUh5K91g4biIUpVh7V8
+      mYVMmdnVIpGAb6Nl6IZxzl6kawSwVWzPZrW4yuHEYbLFKvmyzXMj8X1T+R9EUWr5KYK+2lpC
+      ImTiCGWjZRACwoH1bpLPQJVrDU2zJwUghGA5X+v7+7QAU4urDMaCGPrBCHFUFYWQzyTkNxmK
+      hSisd5OmlrIoSm1xrt4ygJxafRJ7UgC2W7v7jyfGWcoUUVWFZPhg7vdXVWVjzDCSCJEv26zm
+      y9xbyiAExEJ+eoI+gn5jz46LdpM9KYDlwjIBM4CKj1Q2zZH+noYzPgcNRamJIeQ3GBYPiiGL
+      qkBP0E9PyEfA0OXntc6eE4DrubV5/55DzKXz9AS/aeolNRRFQVMUopaPqOXDcT1ypSqr+TK3
+      54uYmkZPyEcs6MdnaAe6i9Q1Amj2QLZ63k7b1iiUyzy7Twe+rUTXVGIhP7GQH8f1yBQrrObL
+      LK4V8Rs6sZCPnqAfU9c4aB9lQwFU8mluzSwSDSYZGe1ty96eZgQghCBTzhDQgyysFhmMB+X0
+      3xbRNZVEOEB8XQxr62JYWCsSMDXiIT8Ry9dpN9tGQwHcvXyei4seSXOagdE/pVs6GAJBtpxF
+      Fwm09S9S3v23h6IoGLpGb8QiGQ5Qsd3avqRsibl0gYCpkYhYRALmvt7C3VAAgxNH0e5+ROTw
+      a23rIzVzSHepWsLzoFRRONK/d1d7uw1FUfCbOn5Tpy9qUao6rGSLzK8WmE5liVg+4iE/Ycvc
+      d595w/rtuDB+ZIKZyds4LxxrSwvQTArytfIawvPh03U58N0lFEXB8hno0QAjSYNS1SGdKzOz
+      ksNJCWLB2hpDcH3Bba/TWADVCrlcnqFDh+iWpSXXc8mVc3hOiJ6of198+N1OXQyWz2DQC1Ks
+      OKTXp1UVBWJBHz0h/56eVt0kgMLqLGc//wob8IwePB7OnSI8l+uXvkBPjJPQ8szmdQbCKla8
+      l+XFFGNjo7syaK44FSqOg/AMYsGDM0jrFh7cpOe4HvmyTTpf5tbcKj5DoyfoIxEObDvUtFNs
+      EkAwNsyLzx7i159fQw+WNlVmz6uSHD7OhbMfcN0wCXiCtN8jlfd45Ttv7tqMUaaUQbh+gn4T
+      n9Et7dLBRNdUeoI+eoI+XM9jrVBhNV8hlUkTCpjEQz7CARNN7f4Zuk0CEMJDwWRi4jC5vLfp
+      mGNV85FfucHEy69x56tLaMLG9RysQIBsvoQdt7Z1RNKTAmIEtelPzw0RCelbOrLoURu7zUG0
+      EfZphHwW5arDaqHC7EoeT9S3bhtYprapi9S1ATHlXIob9+dJjE7w2quHN40B3EqWW5PzxAb9
+      HB3vY76gMxrWiI6MMz15F80Y2NYRSbquP/b9pWqJiu2hCINENIixg7n/vR5I0s02fKZJNGRt
+      BPWs5svMpAtoqkI0WJtJ8q/HPtcrf6cDYhTRYP7RqRT5w6//hfvlOD/50Z9uayo0k8lsCKEZ
+      0uk08Xi84e8Wc4vMruSJ+hNMDPRsw5sabTlgWtp4CM8TZNe3YWSKFUxdIxbyEw0YmLq6+wdl
+      P6UcmwfBa3N8cu4ax771A97oi7dtFuhJK8FrpQx4QeJhmeR2r6Gq3wT7u54gW6ySzpdZyhQx
+      9dpiZtQy17dhtH/wvHkQ3DPEn/z5UKP3doSKU6FUcdE1k7BfnsC+V1EUBV1TiIf9xEK+2spz
+      oVTbhrFaIGDqtZbB8qFr7Vt57prNcI9bCc6Ws3iuj1jQJ/f97BMURdm4+/f1hKjYLmvFCkuZ
+      IjMrOSIBc0MMu72+0DUCaDSzUzvbK4twLRIh2f3Zj9S3YfQbGv1Ri7Ltks6XmV8tcD+VJRr0
+      Ew/5di1XUtcIoBG2a1MoO/hNg4BPbn3Yz9S7PAFTZygWYqAnSKlaC+i5v5wDvgn1tMzWrTx3
+      tQBylRyu4yMZ9csUIAcIRQFtPSNGyG8y5NVWnldzZe4srGJotZXneGjnAT1dLYBCpYzwfLL7
+      c8DRVHUjus31PDLF2rTqjdk0fkPbiHvezkxS1wpACEGx4hL0BeTWB8kGmqoSD/mJBX3r0W21
+      adXFtSJ+UyMeChCxzKb3JHWtABzPoWIrJIPmntpcJWkP9YCeZCRAIuxfD+ipksoWmUvnCa6n
+      kwzoCkKIx9ahrhGA+sjGqYpTxXVUgnLfv+QpPBzQE6hl0CtUmE8XcDyPqGUSCzYO6OkaATy6
+      JF6sVFAUDcvsGhcle4B6DEPA1BmMBcnkS+Qqbi23akpsJACoB/R0be0qVquYmo6hy8Uvydap
+      d3ksn040bOF5QQplm3S+wr2lDKqqEAv6u1cAhbJD0C+D3iU7R6E2eI5YPiIP5ElK58vbEIAQ
+      LN+/xoydxCpNMZs3OBTVCA0MMj+3yplTx7cVFPNgLIDt2lRt6IvI/r+k9TyYJ2kbAvDILs8x
+      a6toq6uYdpW7eYe7X1zhrb/+Ty2JCCvZZYTQCMrVX8kus3UBqBqDA/3cmFEBl6qiElB0Tp88
+      yvWbd+k5fWTHEWH5Yhld1VCEt61jk55kY7eRNpqjayPCmsGMj/GiXyPgBFgo6vQFVfyxJGtL
+      i2iGsaOIMCEEZUfgNw38vtavAXRjJNVBtLFnj0gC0AJRBgMAIR6Mz7KGh7dzuYcQCEoVh1jQ
+      kgNgya7TdXOMrudStoVcAJO0ha4RQP1uX6yWQcgFMEl76BoBGEbtjl8sOwRMA01Gf0naQFfV
+      MiEEhYpNYD11hkSy23SVADzhUbYFIb8hB8CSttA1ArBtG9t1sW0Pyyf7/5L20DUCEEJQrFZR
+      FFXG/0raRtcIAKBYqQ2A99shDJLupasEUCjbBP2y+yNpH10jAE94lKseIZn9TdJGukYApaqN
+      EOCXAfCSNtI1/Q3dF0D3PHxG17gkOQB0RW0TQuCgYvn21vE6kr3PDgQg+PT9XzFTMDgS0wgM
+      DJFO23znWye3tYpbLDskws3HD0gkrWAHArBZLWsknAJLuQo3r97nxz/+MQiB4JsTQB68oz8u
+      A7QASlWXoM/YCJR4EvVrNvu++nsfF4DRjI/Nvu9R/3erLI8LJGlVWbby/e3k+s1+VlvxYyuf
+      VcMTYprD43fv/CvLZZ3hiErfxHFu31ni+298i3KpRKlUQtf1jU1uUIvOaeSMqqqU0Yj6DFzX
+      wXVdXNdtaFXX9Y0cQp7nPTbiR9O0jUM3hBC1lWbbfsifuu0HgzJs2274ASuK0lRZbNvGsr6J
+      ZWh1WQAKhcKmcmylLPBwkEijstQ/K8P4ZlvK03ysVqtomrbps2rkRz0gxrKsjdd243svl8sN
+      D1+pf1Y7EADY1TJVV8HUQNVNnGoV0+9DYetHJKVSKXp7e7frSlPspaOF9ruNdkWEbfmIpK1g
+      mP6HTpHX/PL8XsneomvWASSSTiAFIDnQSAFIDjRSAJIDzcYgWAhBNptt2YWLxeKW3l8qlchk
+      Mi2z3wjHcXZ91kHaaI76/PyTzoduBU8rx8ZvFEXZ0rRlM2z1eq22/yj7Yfpwv9jolmnQjneB
+      XNflH//xH/nxj3/MP/zDP+x6qjyJ5EE6LoB3332Xv/3bv+V73/sef//3f88777zTaZckB4iO
+      C+DixYs899xzxGIxnnnmGS5dutRplyQHiI5vh/7Rj37ET3/6U5aWlpidneXv/u7vOu2S5ADR
+      8Rbg+PHj/PznP+fkyZP8zd/8DSdOnOi0S5IDRHMCEB4f/eZf+ae3f0nRhZkrn/K/fv5P3Jpd
+      4cO3/wcXpgv84v/8T85dvL4tJ4aGhnjrrbfakvdeInmQ5rpAQlDw/IxEy6wVHGaXcrzy4jgL
+      S2sM9CXJCIfe5ACzU9NUT59AWd/WupUZnUQiwbVr13AcZ9ORqa2iHQcySBvNUZ8G7XQ5mhOA
+      omBRYnpVYTS3QrI3xLkLk7z6xp9hzpooQuAJhUqljOt5eNXqlgUQiURwHId8Pk8oFGr677bC
+      fqg4+8VGPRim0+XYcjxAen6e4OAgT9v4vNV4gGq1yttvv823v/1txsbGtuLSlmzs9QWk/WJj
+      zy6ExZuo/NvBtm2SySTLy8u7cHWJpDEdnwWq47quFICk7XSNAGzbpre3l+Xl5S0FX0skO6Fr
+      BOB5HuFwGM/zyOfznXZHckDoGgEABAIBLMtidXW1065IDghdJQBN04jFYnIcIGkbXSUAYGMg
+      LMcBknbQlQJIp9OPTZAkkbSSrhNAPB6nUChQrVY77YrkANA1Aqin0jMMg0gkwsrKSoc9khwE
+      ukYA9fyTqqoSj8dJpVId9khyEOgaAdRRFEUOhCVto2sE8OCgN5lMkslk5EBYsut0pQBisRjl
+      cnnLuYUkkq3SUAAr87Os5nJM3r5LJ2K0AoEApmnueqIsiaShABQ3x7v/722mVit04sxGRVFI
+      JBJyRViy62wSQDm/wqVrUwyPjaOWcx1pAQB6e3vlTJBk19kkAMMfJqK6BJID5DOd25RWXxGW
+      meIku8kmAdilLFUzyOr9e0ycOt2xxEGRSATXdSkUCh3yQHIQ2CQAfzjJCy8+TyIWoZzP4QEI
+      wc1Ln/K7j77AEVBKT/Nv//YbFlYL3LrwAZPLZS59+gEffXFl2448GhtqWRamabK2trbta0ok
+      T6PhIDiXTpHJFahUK5TKNgiPu/MZAvYCy3mXya9uMnZsgKs3J8ksTZMuZplbVsjO38XeriOP
+      pEKRW6Ml7WBTD0cIj2rVRvUFiIU1pqeXePboIJpwKVVAU1x8lsb8SpZgeIReLUEKHUQRV9Hx
+      bJtMsUipVCIQaP7g62q1+tAGOFVV6e3tZWFh4bFHkm6VdiTekjaa40nnNreSp5VjkwBK2RRf
+      fP4lTihGerXIX/3lswC88soZUgWF0tRtBl56jcqNu0wcH8ErBIj6ooy/9AwFJYzPMPCtp0PZ
+      SloNXdc3vX9kZIQLFy4ghGhZio7dTicibTRHu9KiwJPLscm6Fe3nhZPHuL5cxHO/OQQ1mhwi
+      mgTP60dRVU6erAmDnj4sgMA4yR042Uip0WiUcDjM7Ows4+PjO7i6RNKYhvIbO/0qyVweXzC0
+      6Q27lbawEZqmMTw8zNTUFGNjYxs7RiWSVtGwNq8t3OP9D97n408vdWwhDGorwmNjY8zPz2Pb
+      2x1eSySPp6EAZm/dIjw0zvBAb8d3yw0MDGDbtgyQkewKDet3fHiM0f4k0Uiw3f5sQlVVRkdH
+      mZqa6rQrkn1IQwE45RxXLl3i6zvTdENIytjYGDMzMzI+QNJyGgrACFjouCwvp9smgCdNhw0M
+      DFCpVGTCLEnLaSgATdPx+QMYWvtmXZ40u+T3+0kmk0xPT7fNH8nBoOFmuM/OnaciRFsWKZqh
+      Phs0NTUl44QlLWWTAHR/mJdePInu8zM8MNi2gJinLYkPDw+TyWTk7lBJS9kkAEVRyK6kmJ1d
+      4f7UnbatAzxtz0YwGCQej3P//v02eSQ5CDTseCdHDnPy6DAvvfbtzh8kvI6qqhw6dIj79+/L
+      bpCkZTQUQDGbZim1wuTkfbopHmtsbIyFhQUqlUqnXZHsExre4A+dfIVDJ9vtytOJRCKEQiHm
+      5uY4cuRIp92R7AM2CcAtZ/nd796nWHXpmzjNa89P0C1b0BRF4dChQ0xNTXH48GG5OU6yYzZ1
+      gdaW5ug79i3+6j++hZua3naE126gKAqjo6MsLi7K7NGSlrBJAD0DI6xOXebdd9/BGhxn98Mu
+      amhacxOufX19CCFYXFzcZY8kB4FNXaBMaonxU69xqC/S1i5GswLQNI0TJ05w+fJlRkdHZTdI
+      siM2tQBOJc/ZD37Pb3/7Wz754irduP3sxIkTZLNZ5ufnO+2KZI+zqQXwh5P88Z8cYSAeeuj1
+      1YUp5vIqzx0dRVTyfHltklOnnuXu9a9IHj5FYf4Gi2Ufr54+sS1HtjK3HwwGmZiY4KuvvmJw
+      cFC2ApJts6kFiPQOEdE9HCCXya7nBfL47MI1licvkS55XD53Fs/LcfbcORYLCp9+9Hs+O3+Z
+      vkR8245sNeLr1KlTLCwsyLQpkh2xqQWwixl+/S9v40ZjJBKH+N6/ewEQoGoYuovjChxPwQoY
+      pFcyhJIDeO40r3/vTc59/CHxv/5LRAvSojwN0zQ5duwYly5d4s0332wqvcZ+SCeyX2x0bVoU
+      w4ry0gvP8MndVUSxvvFM5dihJDNZFWfuLqPPn+DixTu8/Oor3Lz4OSeef5Wl2Tskxo4SNgyU
+      baRFMU1zy2k4Tp06xT//8z+TyWRIJBJN29ltpI2n07VpUaB2UN3a/Byx46dqLygKR557iSNA
+      IZ/HCoX4sx+MApB8809q7xkbaKnTzRCJRDh8+DCXL1/mzTfflGMByZbZNAYo5VLcnFllbCiB
+      JzZXqGAo1DUrw1BrBWZnZ2W0mGRbbE6OG4zzzLFDBHt6OX3qWMezQjyNWCzG0NAQV69e7bQr
+      kj3IpvpdXJvlV++do1wqMHVvpm27QbebcEtRFE6fPs2dO3fI5/Mt9kqy39mcGjE2yn/5rz9p
+      vyM7GAzF43FGRka4fPky3/nOd+RYQNI0DSPCHnp0wqstoqoqZ86c4datWywtLXXaHckeotu7
+      +E2TTCY5deoUH374IeVyudPuSPYIXSOAnW5vVhSFF154gVAoxMcffyzPFpM0RdcIoBVomsZ3
+      v/tdUqkU169fl7HDkqeyrwQAEA6Hef311/niiy/kPiHJU9l3AoBaDqHnn3+eDz74gFKp1Gl3
+      JF3MvhSAoiicOXOGYDDI2bNn5XhA8lj2pQCgNh54/fXXWVpa4tKlS1IEkoZ0jQB24+ilcDjM
+      m2++ybVr1/jss89afn3J3qdrBLBb22L7+/v54Q9/yOzsLO+//75cI5A8RNcIYLdQFIVoNMpf
+      /MVf4Lou7777LrlcTk6RSoADIIA6lmXx/e9/n1gsxi9/+UtWVlakCCTdI4B2Jbp64403OHHi
+      BL/4xS+4ePGiTLB1wOmW5M9to75lore3l/Pnz3Pz5k1eeuklDh8+3DUHgkjaR3PfuBCkZu8w
+      m1M588wRhJ3js/M3OPnCKe5du0TvkTM4K5Nk1RjPHRnaZZd3jqIojIyMMDAwwOTkJOfPn+f6
+      9eu8/PLLDA4OtvUwcElnafKW53Hh8m0sw2FlbJyVLz9DD/Xw0YcfEIwOM3X216heEME9ThwZ
+      atupMjtF13WOHz/O+Pg4V69e5b333iOZTHLs2DFGR0fx+/2ddlGyyzTf5qsKqgqeEHgeGIaG
+      6ziouoEQDoqiIYTAtm3yxSLlchnbtjEMY+MStm0/duCZyWQ2ovdd133skai6rm/coT3Pe2za
+      C03TNtIt1v2qVqubMgSoqoqu65w4cYKJiQnu3LnDlStXOHfuHMPDwxw9epT+/n4cx3nIluM4
+      DRfXqtUqwWBwIyin1WUByOfzDTMdKIrS9Of94N83Kkv9szIMo6myaJpGpVJB1/Wm/KhnhbAs
+      a+O13fjeS6VSw65t/XtXRDNTIUJw/9YVZnMqo0EDayTGpc+u8/xLZ7h79QKJwy/iLt8io8b5
+      1qkJoFaho+vpUZohlUrR29vb9Pu3QyMBNMJ1XdLpNJOTk9y9exeA3t5eBgYG6O/vJxKJPFQx
+      tmNjJ+wHG+1Ki/K0cjQngAcoFYv4LeupkWJbFcDy8jLJZHIrrmyZ7XypjuOwtLTEwsICCwsL
+      pFIpVFUlkUiQTCaJxWJEIhGi0Sg+nw/P85pO9LtdpACa52nl2LL1wANNVit5sMnsJnRdZ2ho
+      iKGhoY1MZmtraxtiWFhYoFQqUSqVUFWVaDRKOBzGsiwCgQCWZWFZ1kZ3Qtf1jYemaduKX5Yx
+      z61DzvttAUVR0DSNRCKxkYnuwfFFsVgkk8mQz+cpFoukUimK62kiXdfdVHHrfeVHhVEXh6qq
+      m/6tPxRFeejnZh51m43+fdCnJz1/3GuP+7xa8Z6dIIR4og0pgB2iKMpGWsdQKEQsFtvUmgkh
+      cBwH27Y3BtP154++Vn/UB4TVahXXdfE8D9d1N1ohz/M2/dzoUbf/6PNG/z7qczOvPen1nb63
+      HXSNALaaHbpbafQFP3inbwWO4+x639l13V0dy9QFudtrLp7nPdFG16z4dNudoZtpR2zD46Yj
+      W0U7MkPD07NDd40AJJJOsNGOCiFamlqwXC5vqXnL5XK7vvLqOM6uH7ItbTRHvQXY7Snjp5Xj
+      oY6k1cIpzq1eKxaLtdR+I7LZrLTRJTbqkwBbOURlOzytHBsCqE/xdYpHl/uljf1toz447XQ5
+      trwSLJHsJ7Sf/exnP+uYda/K5x//gVRJ5cr5j+kfHeez935F+NAxAq26MQiX8598wGy6wt0b
+      n+OPH+Lrc7/Di40Q8e98KlF4Lhc/+oTAYB+XP/mQ5bLKtQtnSQyPcfEP72D2HSe44x0Fgltf
+      fkHJH+bW+U+YW61y/9aXqJFBpi7+nkJgmJi1s7Kkpm9y7vOLGMEIl8/9gRI+Pm7e3c8AAAPz
+      SURBVD37GUeOjfPhr98hPnIc345MCG5e/oILV+4QCgg+OXuBoOny+wuTjPf5ee/j8xw9fGhH
+      ZQDB3OR1Prt4g56eEOc+/ADFDPDRp5c4Mj7Ib3/9G0YPH0V7YGja0VkgO7tIWg0z/fUNFu99
+      ze3JSW7cuE2phTNwwq0yPbuIUATzc3NMT93l+pWvyJVacwicWy1w7/YU2bV5VrUI97++wers
+      Hb6+M8nXN74m14qAM6fE/P0ZVrI57s8tIhAsz88zOXWPr69eJlPceVmivaOcmujl3ldfUImP
+      cvvLi6zOfs21r29z7c4M5RZ8XKPHThLXKtybmiZvO4hyhmtf3+Hu3VtM3k/t3AAQHxrBXl1g
+      8uYVQuPjXPnoU6bv3WLy9jWu3lvGfWTmtaMCUDUdt1xG1Q3io2Pc+Owsvf2tDagRaLzy+h+R
+      nrqGCCZZufkp/uREy9K+6/4I/Ykwqq7jlkuouk5ocIx7X54l0T/YIiMWg/0xBBqvvv4my/eu
+      4vrj5KYvoUeGW1KWYnaJuysqL50+jJ3PoZo+YuPHufD7PzB+qK8FFmBp+ja+oRMcPXKUbz87
+      wJVrkwwnwnx2bY7hvtDTL9AEaysZJg73k86UqWSzaIEAfYNDfPiHy5w4svkgxY6uBGvhAU6O
+      rqDHDqE6RbxKGdPnI9TCTYiqpuMW0hw5813CpkCxK+jBIGbQ1zIbx19+mWDPICdHMujxQ2hO
+      Ec+ulcUfbI2NgWPP4QYiZGfvcPTF14kYHngVNF8Q3dp5WcrFMl41y5p6iol4kfjp72BXKjgn
+      ThDwm4R2bMKjUnbI5ucZ7DvGwqrLv/v3PyBb9qiUq/j0VshYIWyZzClJ3vzjo9y6+hVnfvAG
+      +WKZSrmM5dMwH+lay0Gw5EAjV4IlBxopAMlDfP7b/8vtVJnLH/2Ga9MrD/zG49KXF5iemd3W
+      wYkXL1zg/uxsq9xsGbILJHmI3/7qf2NYY2SmviI6epSvLl9i5OjzUFphreQxmIxzaMDi3T/c
+      4L/9958yff49fnNhlmdG+7iXKXIoonH11hTPnXqW+bk0feOj5KdnyHsqvQkfmdQyii/CUMwi
+      tTzLkdf/My+O7u6q9pOQLYDkYdQQ7vLXaMkRqvlVEuPP0RvUUaweopaB67rcuTtNyFCxBQR7
+      +ukPK6ysFQgGfMynMpw68zym6nDkxGlEZQ0tkCDs13FdB3+kn7E+i5VsldHBBF6Hb79dEw8g
+      6Q5eevlVNM8D0wTVID13n9jwOJXVBUr4CfkNvGqeQlnFBBKDozz3gp/ywi3yvc/xrcMx7k2n
+      GB2OY3smrjdENZumqlkEfSpCKJi6Qt/MLX753ln+6szuxjY/jf8PgLQiJ1Gt/uYAAAAASUVO
+      RK5CYII=
+    </thumbnail>
+    <thumbnail height='144' name='Sheet 2' width='174'>
+      iVBORw0KGgoAAAANSUhEUgAAAK4AAACQCAYAAACRfFAzAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAADe0lEQVR4nO3XQYiUdRyH8a+tCFogMgqKh1KLhoQNlchdV9EQbDt1GlhxIcEMwYOXxYT2
+      knjxIixisXowkBZP4sVQrFZ33QkFhaFgpK3VTBBjMZUIxGE6rMEcpZZ3ePD5HN8//Pm98PDj
+      fec0m81mJJiX2j2A9F8YrpAMV0iGKyTDFZLhCslwhWS4QjJcIRmukAxXSIYrJMMVkuEKyXCF
+      ZLhCMlwhGa6QDFdIhiskwxWS4QrJcIVkuEIyXCEZrpAMV0iGKyTDFZLhCslwhWS4QjJcIRmu
+      kAxXSIYrJMMVkuEKyXCFZLhCMlwhGa6QDFdIhiskwxWS4QrJcIU0t90DFKVer7d7BM2iFybc
+      JCmXy+0eQbPETwUhGa6QDFdIhiskwxWS4QrJcIVkuEIyXCEZrpAMV0iGKyTDFZLhCslwhWS4
+      QjJcIRmukAxXSIYrJMMVkuEKyXCFZLhCMlwhGa6QDFdIhiskwxWS4QrJcIVkuEIyXCEZrpAM
+      V0iGKyTDFZLhCslwhWS4QjJcIRmukAxXSIarYk2fy2Ble4auNVoeXstQZSBn7j7/NYarQt29
+      /H3mbu7J1Gg1f/+PewxXBZrK+HevpKuvN+t/+zZjD1rPGrl99rP0Vyrp33s4F+7MbOTHtZPZ
+      /9H2VCr92Tt0OfefLWrDVXGmrmZ8+ZZsXLQiW3ufZqw63XL4e64+ei9HR07l4MY/cmL4fKYb
+      tYwcuZRlH3+RkVMHsq7+Zb6qzuxpw1VhJicuZXn3O5mfpPRuV/LNxUy1nHd2d2Vhx7y81tOd
+      V29O5td7v+Tnv9Zkw4aF6Zj3VnYe+zoDPfOTGK4K0qgN59Dkh/lk00x4KX2Qfb0/5vPhWv79
+      TatNVPOw8SS3xidy+83Xs3Lpqrzx8o1cufIwjSe3cnqgksFzM1vacFWARn76oZrFnauzqOVp
+      6e21WTw6muvPyl29oJ79/TsyOLYku3ZvS6mjM32fvp8/j+9J347BjC3Zld3bSkmSOc1ms1n8
+      ixSvXq+nXC63ewzNEjeukAxXSIYrJMMVkuEKyXCFZLhCMlwhGa6QDFdIhiskwxWS4QrJcIVk
+      uEIyXCEZrpAMV0iGKyTDFZLhCslwhWS4QjJcIRmukAxXSIYrJMMVkuEKyXCFZLhCMlwhGa6Q
+      DFdIhiskwxWS4QrJcIVkuEIyXCEZrpAMV0iGK6R/AE40kK72A+SxAAAAAElFTkSuQmCC
     </thumbnail>
   </thumbnails>
 </workbook>
