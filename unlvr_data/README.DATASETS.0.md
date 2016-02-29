@@ -121,7 +121,6 @@ Datasets con los cuales se trabaja
 | ------------------------ | ------------------------------------------------ |
 | brand_id                 | (join:brand) toman la interseccion de financial,media,track            |
 | year                     | año                                              |
-| year                     | año                                              |
 | to_return                |                                                  |
 | gp_return                |                                                  |
 | boost                    |                                                  |
@@ -129,21 +128,6 @@ Datasets con los cuales se trabaja
 | gained_fraction          |                                                  |
 | brand_value_share_change |                                                  |
 | estimated_conviction     |                                                  |
-
-
-
-| 
-|  $ brand_id                : int  1 2 8 9 10 16 22 23 24 25 ...
-|  $ year                    : int  2015 2015 2015 2015 2015 2015 2015 2015 2015 2015 ...
- $ to_return               : num  4.52e+07 3.44e+06 1.57e+07 0.00 2.56e+08 ...
- $ gp_return               : num  2.19e+07 1.53e+06 6.74e+06 0.00 1.15e+08 ...
- $ boost                   : num  1 1 1 1 1.2 1 1 1.15 1.15 1.2 ...
- $ protected_fraction      : num  0.020678 1 0.067114 NA 0.000104 ...
- $ gained_fraction         : num  0.979 0 0.933 NA 1 ...
- $ brand_value_share_change: num  7.64e-02 -1.34e-02 9.55e-03 -1.23e-02 3.66e-05 ...
- $ estimated_conviction    : num  60.94 4.31 54.76 4.07 1.06 ...
-
-
 
 
 
