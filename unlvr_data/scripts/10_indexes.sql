@@ -10,3 +10,4 @@ create index idx_estimated_returns_brand_id_year on estimated_returns(brand_id,y
 create index idx_financial_data_brand_id_year    on financial_data(brand_id,year) using BTREE;
 create index idx_media_data_brand_id_year        on media_data(brand_id,year) using BTREE;
 create index idx_tracking_data_brand_id_year     on tracking_data(brand_id,year) using BTREE;
+create index idx_category_data_year_cat_id       on category_data (year, cat_id) using BTREE;
