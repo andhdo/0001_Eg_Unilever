@@ -23,3 +23,4 @@ b.      Una vez hecho eso ya tendrás todas las tablas actualizadas que te permi
 c.       Para usar el dashboard de whatif en Tableau no ocuparás R. Como habíamos platicado, encontramos que es mejor usar Tableau de manera independiente.
 d.      Si tienes algún problema en correrlo dinos y te echamos la mano.
 
+MArzo 17
